@@ -1,0 +1,67 @@
+body {
+  background: linear-gradient(cornflowerblue,#03A9F4);
+  height: 100vh;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    display : flex;
+    justify-content: center;
+    padding:0;
+    text-decoration: none;
+}
+    
+li {
+    position: relative;
+    padding: 1rem;
+ } 
+  
+.dropdown {
+   top: 3rem;
+   left: 0;
+}
+.grand {
+    top: 0;
+    left: 6rem;
+  }
+.dropdown, .grand {
+  background: #266fed;
+  color: white;
+  display: block;
+  position: absolute;
+  transition-duration: 0,5 ease;
+  visibility:hidden;
+  box-shadow: 0 0 5px 0 rgba(1, 1, 1, 0.75);
+}
+li ul li {
+  border-bottom: 1px solid white;
+  }
+li ul li:last-child {
+  border-bottom: none;
+  }
+li:hover,
+li:focus {
+    background: #e91e63;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
+li:hover > ul,
+li:focus > ul {
+  visibility:visible;
+  }
+li:hover > .dropdown,
+li:focus > .dropdown {
+  animation: mine 1s ease;
+  }
+@keyframes mine {
+  from {top:2rem;}
+  to {top: 3em;}
+ }
+li:hover > .grand,
+li:focus > .grand {
+  animation: other 1s ease;
+  }
+@keyframes other {
+  from {top:-1rem;}
+  to {top: 0rem;}
+ }
